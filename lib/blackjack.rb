@@ -56,19 +56,16 @@ end
 
 ##runner calls on the #welcome method, 
 ##then on the #initial_round method, 
-##then calls #hit? and #display_card_total methods
-##-until- the card sum is greater than 21,
+##then calls #hit? and #display_card_total methods -until- the card sum is greater than 21,
 ##then calls on the #end_game method
 
 def runner
     welcome
     init = initial_round
-    #binding.pry
-    
-      hit?(init)
+    until init > 21
+      init = hit?(init)
       display_card_total(init)
-      until init > 21
-      end
-end_game(init)
+    end
+    end_game(init)
 end
     
